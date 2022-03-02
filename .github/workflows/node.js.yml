@@ -31,9 +31,7 @@ jobs:
     - name: show Info
     - run: sh 'pwd'
     - run: sh 'ls'
-    - name: NPM Publish
-    - name: Automatic Releases
-    
+#     - name: Automatic Releases
 #       uses: marvinpinto/action-automatic-releases@v1.2.1
 #       with:
 #       # GitHub secret token
