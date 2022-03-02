@@ -28,7 +28,6 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - name: show Info
     - run: sh 'pwd'
     - run: sh 'ls'
 #     - name: Automatic Releases
