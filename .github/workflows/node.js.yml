@@ -28,15 +28,16 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - run: pwd
-    - run: ls
+    - name: show Info
+    - run: sh 'pwd'
+    - run: sh 'ls'
     - name: NPM Publish
     - name: Automatic Releases
     
-      uses: marvinpinto/action-automatic-releases@v1.2.1
-      with:
-      # GitHub secret token
-        repo_token: ${{ secrets.NPM_TOKEN }}
-        automatic_release_tag: optional
-        prerelease: true
-        # Assets to upload to the release
+#       uses: marvinpinto/action-automatic-releases@v1.2.1
+#       with:
+#       # GitHub secret token
+#         repo_token: ${{ secrets.NPM_TOKEN }}
+#         automatic_release_tag: optional
+#         prerelease: true
+#         # Assets to upload to the release
