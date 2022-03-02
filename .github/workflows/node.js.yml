@@ -28,12 +28,12 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - run: ls
-#     - name: Automatic Releases
-#       uses: marvinpinto/action-automatic-releases@v1.2.1
-#       with:
-#       # GitHub secret token
-#         repo_token: ${{ secrets.NPM_TOKEN }}
-#         automatic_release_tag: optional
-#         prerelease: true
-#         # Assets to upload to the release
+    - run: tar -czvf elementplus.tar.gz ./dist
+    - name: Automatic Releases
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+        repo_token: ${{ secrets.NPM_TOKEN }}
+        automatic_release_tag: optional
+        prerelease: true
+        # Assets to upload to the release
+        files: elementplus.tar.gz
