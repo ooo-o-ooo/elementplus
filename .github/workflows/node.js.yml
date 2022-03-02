@@ -33,7 +33,7 @@ jobs:
       uses: marvinpinto/action-automatic-releases@v1.2.1
       with:
         repo_token: ${{ secrets.NPM_TOKEN }}
-        automatic_release_tag: optional
+        automatic_release_tag: latest
         prerelease: true
         # Assets to upload to the release
         files: elementplus.tar.gz
