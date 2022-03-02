@@ -19,15 +19,22 @@ export default {
     }
   },
   methods:{
-    getData: function () {
+    getUser: function () {
       axios.get('/api/getInfo').then((res)=>{
         this.users=res.data
       }
       )
     },
+    getFile:function () {
+      axios.get('/file-info/getFile').then((res)=>{
+        res.data
+        console.log(res.data)
+      })
+    }
   },
   mounted() {
-    this.getData()
+    this.getUser()
+    this.getFile();
   }
 }
 </script>
