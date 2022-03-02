@@ -28,8 +28,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - run: sh 'pwd'
-    - run: sh 'ls'
+    - run: ls
 #     - name: Automatic Releases
 #       uses: marvinpinto/action-automatic-releases@v1.2.1
 #       with:
