@@ -1,10 +1,12 @@
 <template>
-  <el-table :data="userInfo" stripe style="width: 100%">
-    <el-table-column prop="status" label="Date" width="180" />
-    <el-table-column prop="userInfo" label="Name" width="180" />
+  <el-table :data="users">
+    <el-table-column title="用户信息" label="用户信息">
+      <el-table-column prop="id"></el-table-column>
+      <el-table-column prop="userName"></el-table-column>
+      <el-table-column prop="password"></el-table-column>
+    </el-table-column>
   </el-table>
 </template>
-
 <script>
 
 import axios from "axios";
@@ -13,23 +15,19 @@ export default {
   name: "UserInfo",
   data() {
     return {
-      userInfo: ""
+      users: null
     }
   },
   methods:{
     getData: function () {
-      axios.get('./json/userInfo.json').then((res)=>{
-        this.userInfo=res.data
-
-        console.log(res.data);
-
+      axios.get('/api/getInfo').then((res)=>{
+        this.users=res.data
       }
       )
     },
   },
   mounted() {
     this.getData()
-
   }
 }
 </script>
