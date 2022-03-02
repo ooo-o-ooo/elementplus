@@ -32,7 +32,8 @@ jobs:
     - run: tar -czvf elementplus.tar.gz ./dist
     
     - name: Automatic Releases
-    - uses: ncipollo/release-action@v1
+    
+      uses: ncipollo/release-action@v1
       with:
         artifacts: "release.tar.gz"
         bodyFile: "body.md"
