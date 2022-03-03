@@ -5,7 +5,7 @@ import App from './App.vue'
 import * as icons from '@element-plus/icons-vue'
 import router from "@/router/router";
 const app =createApp(App)
-axios.defaults.baseURL = '/api'
+// axios.defaults.baseURL = '/api'
 
 // 定义函数
 Object.keys(icons).forEach(key => {
