@@ -4,6 +4,7 @@ import HomeMain from "@/components/HomeMain";
 import HelloWorld from "@/components/HelloWorld";
 const HomePage = () =>import("@/components/HomePage");
 const UserInfo = () =>import("@/components/UserInfo");
+const DataDisplay = () =>import("@/components/DataDisplay");
 const router = createRouter({
     history: createWebHistory(),
     routes:[
@@ -11,6 +12,7 @@ const router = createRouter({
         {path:'/main', component:HomePage},
         {path:'/page', component:HelloWorld},
         {path:'/userInfo', component:UserInfo},
+        {path:'/dataDisplay', component:DataDisplay},
     ]
 })
 export default router

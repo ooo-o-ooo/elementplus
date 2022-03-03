@@ -7,9 +7,6 @@
     <el-menu-item index=1>中华</el-menu-item>
     <el-menu-item index=2>有为</el-menu-item>
     <el-menu-item index=3>有为</el-menu-item>
-    <el-menu-item index=4>有为</el-menu-item>
-    <el-menu-item index=5>有为</el-menu-item>
-    <el-menu-item index=6>有为</el-menu-item>
   </el-menu>
   </el-affix>
 
@@ -27,6 +24,7 @@
     default-active="2"
     :collapse="isCollapse"
     :collapse-transition="false"
+    router=true
   >
     <el-sub-menu index="1">
       <template #title>
@@ -35,7 +33,10 @@
       </template>
       <el-menu-item-group>
         <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
+        <el-menu-item index="/main">
+      <el-icon><setting /></el-icon>
+      <template #title>设置</template>
+        </el-menu-item>
         <el-menu-item index="1-2">item two</el-menu-item>
       </el-menu-item-group>
       <el-menu-item-group title="Group Two">
@@ -50,19 +51,7 @@
       <el-icon><document /></el-icon>
       <template #title>Navigator Three</template>
     </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
-    </el-menu-item>
-    <el-menu-item index="4">
+    <el-menu-item index="dataDisplay">
       <el-icon><setting /></el-icon>
       <template #title>Navigator Four</template>
     </el-menu-item>
@@ -70,9 +59,11 @@
     </el-menu-item>
   </el-menu>
 </el-aside>
-<el-main>Main</el-main>
-
-
+<el-main>
+  <el-scrollbar max-height="100%">
+  <router-view></router-view>
+  </el-scrollbar>
+</el-main>
  
 </el-container>
 </el-container>
@@ -113,5 +104,10 @@ height: 100%;
 
 .el-aside >.el-menu{
   height: calc(100vh - 60px);
+}
+
+.el-main > .el-scrollbar{
+  height: calc(100vh - 100px);
+
 }
 </style>
